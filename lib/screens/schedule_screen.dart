@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthcare/widgets/upcoming_schedule.dart';
 
 class ScheduleScreen extends StatefulWidget {
   const ScheduleScreen({super.key});
@@ -11,7 +12,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
   int _buttonIndex = 0;
 
   final _scheduleWidgets = [
-    const Center(child: Text("1")),
+    const UpcomingSchedule(),
     const Center(child: Text("2")),
     const Center(child: Text("3")),
   ];
@@ -52,11 +53,18 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 12, horizontal: 25),
                       decoration: BoxDecoration(
+                          color: _buttonIndex == 0
+                              ? const Color(0xFF7165D6)
+                              : Colors.transparent,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text(
+                      child: Text(
                         "Upcoming",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w500),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              _buttonIndex == 0 ? Colors.white : Colors.black38,
+                        ),
                       ),
                     ),
                   ),
@@ -70,11 +78,18 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 12, horizontal: 25),
                       decoration: BoxDecoration(
+                          color: _buttonIndex == 1
+                              ? const Color(0xFF7165D6)
+                              : Colors.transparent,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text(
+                      child: Text(
                         "Completed",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w500),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              _buttonIndex == 1 ? Colors.white : Colors.black38,
+                        ),
                       ),
                     ),
                   ),
@@ -88,13 +103,18 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 12, horizontal: 25),
                       decoration: BoxDecoration(
-                          color:
-                              _buttonIndex == 2 ? Colors.white : Colors.black12,
+                          color: _buttonIndex == 2
+                              ? const Color(0xFF7165D6)
+                              : Colors.transparent,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text(
+                      child: Text(
                         "Cancel",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w500),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color:
+                              _buttonIndex == 2 ? Colors.white : Colors.black38,
+                        ),
                       ),
                     ),
                   )
